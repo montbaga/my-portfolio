@@ -3,239 +3,247 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monty Bagati | QA Leader</title>
+    <title>Monty Bagati | QA Leader Promotion</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Roboto', sans-serif; background-color: #000; color: #fff; scroll-behavior: smooth; }
-        .spacex-border { border-bottom: 2px solid #fff; width: 30px; transition: width 0.3s ease; }
-        .nav-item:hover .spacex-border { width: 100%; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: #000; 
+            color: #fff; 
+            scroll-behavior: smooth;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; height: 100vh;
+            position: relative;
         }
-        .section-padding { padding: 80px 10%; }
+        .hero-bg::after {
+            content: " "; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+            background-size: 100% 4px, 3px 100%; pointer-events: none;
+        }
+        .section-padding { padding: 100px 10%; }
         .stat-number { font-size: 4rem; font-weight: 900; line-height: 1; }
-        .mission-card { border-left: 1px solid #333; padding-left: 20px; margin-bottom: 40px; }
+        .mission-card { border-left: 1px solid #333; padding-left: 20px; margin-bottom: 40px; transition: 0.3s; }
+        .mission-card:hover { border-left: 1px solid #60a5fa; background: rgba(255,255,255,0.02); }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 flex justify-between items-center px-10 py-5 bg-black/90 backdrop-blur-md border-b border-zinc-900">
-    <div class="text-xl font-black tracking-tighter uppercase">Monty Bagati's Promotion</div>
-    
-    <div class="hidden lg:flex space-x-6 text-[10px] font-bold uppercase tracking-widest">
-        <a href="#missions" class="nav-item">Missions<div class="spacex-border"></div></a>
-        <a href="#initiatives" class="nav-item">Initiatives<div class="spacex-border"></div></a>
-        <a href="#certifications" class="nav-item">Certifications<div class="spacex-border"></div></a>
-        <a href="#rewards" class="nav-item">Awards<div class="spacex-border"></div></a>
-        <a href="#mentorship" class="nav-item">Mentorship<div class="spacex-border"></div></a>
-         <a href="#foundation" class="nav-item">Foundation<div class="spacex-border"></div></a>
-        <a href="#awards" class="nav-item">Recognition<div class="spacex-border"></div></a>
-       
-    </div>
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-blue-500 z-[100] transition-all duration-75" style="width: 0%"></div>
 
-    <div class="flex items-center space-x-2">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-        </span>
-        <span class="text-[10px] font-bold uppercase tracking-widest opacity-70">Status: Promotion Ready</span>
-    </div>
-</nav>
+    <nav class="fixed w-full z-50 flex justify-between items-center px-10 py-5 bg-black/90 backdrop-blur-md border-b border-zinc-900">
+        <div class="text-xl font-black tracking-tighter uppercase">Monty Bagati's Promotion</div>
+        <div class="hidden lg:flex space-x-6 text-[10px] font-bold uppercase tracking-widest">
+            <a href="#missions" class="hover:text-blue-400 transition">Missions</a>
+            <a href="#initiatives" class="hover:text-blue-400 transition">Initiatives</a>
+            <a href="#certifications" class="hover:text-blue-400 transition">Certifications</a>
+            <a href="#rewards" class="hover:text-blue-400 transition">Awards</a>
+            <a href="#mentorship" class="hover:text-blue-400 transition">Mentorship</a>
+            <a href="#foundation" class="hover:text-blue-400 transition">Foundation</a>
+            <a href="#awards" class="hover:text-blue-400 transition">Recognition</a>
+        </div>
+        <div class="flex items-center space-x-2">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            </span>
+            <span class="text-[10px] font-bold uppercase tracking-widest opacity-70">Status: Mission Ready</span>
+        </div>
+    </nav>
 
     <section class="hero-bg flex flex-col justify-center pt-24 px-10 md:px-24">
-        <h2 class="text-xl uppercase tracking-[0.5em] mb-4 opacity-80">Engineering Test Manager</h2>
-        <h1 class="text-6xl md:text-8xl font-black uppercase leading-none mb-8">Advancing <br>Career Growth</h1>
-        <div class="flex space-x-4">
-            <a href="#missions" class="border-2 border-white px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">View Highlights</a>
+        <div data-aos="fade-right">
+            <h2 class="text-xl uppercase tracking-[0.5em] mb-4 text-blue-400 font-mono">System.Initialize (Promotion_2025)</h2>
+            <h1 class="text-6xl md:text-8xl font-black uppercase leading-none mb-8">
+                Advancing <br>
+                <span id="typewriter"></span><span class="animate-pulse">_</span>
+            </h1>
+            <a href="#missions" class="border border-white/30 px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all inline-block w-fit">Launch Highlights</a>
         </div>
     </section>
 
-    <section class="section-padding grid grid-cols-1 md:grid-cols-3 gap-12 bg-black">
-        <div class="text-center">
-            <div class="stat-number">17+</div>
-            <div class="text-sm uppercase tracking-widest mt-2 opacity-60">Years of Experience</div>
+    <section class="section-padding grid grid-cols-1 md:grid-cols-3 gap-12 bg-black/50">
+        <div class="text-center" data-aos="zoom-in">
+            <div class="stat-number font-mono text-blue-500">17+</div>
+            <div class="text-[10px] uppercase tracking-[0.4em] mt-4 opacity-60 font-bold">Years Experience </div>
         </div>
-        <div class="text-center">
-            <div class="stat-number">100%</div>
-            <div class="text-sm uppercase tracking-widest mt-2 opacity-60">E2E Test Coverage</div>
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stat-number font-mono text-blue-500">100%</div>
+            <div class="text-[10px] uppercase tracking-[0.4em] mt-4 opacity-60 font-bold">E2E Coverage </div>
         </div>
-        <div class="text-center">
-            <div class="stat-number">100K€</div>
-            <div class="text-sm uppercase tracking-widest mt-2 opacity-60">Annual Savings (Automation)</div>
+        <div class="text-center" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stat-number font-mono text-blue-500">100K€</div>
+            <div class="text-[10px] uppercase tracking-[0.4em] mt-4 opacity-60 font-bold">Annual Savings </div>
         </div>
     </section>
 
-    <section id="missions" class="section-padding bg-black border-t border-zinc-800">
-        <h2 class="text-3xl font-bold uppercase tracking-widest mb-16">Active Missions IN COGNIZANT</h2>
-        
-        <div class="mission-card">
-            <h3 class="text-zinc-500 text-sm uppercase tracking-widest">Volkswagen , TQA , Germany | 2023 - 2025</h3>
+    <section id="missions" class="section-padding bg-black border-t border-zinc-900">
+        <h2 class="text-3xl font-black uppercase tracking-[0.3em] mb-16" data-aos="fade-up">Active Missions In Cognizant [cite: 10]</h2>
+        <div class="mission-card" data-aos="fade-up">
+            <h3 class="text-blue-500 font-mono text-xs uppercase tracking-widest">Volkswagen | TQA | Germany | 2023 - 2025</h3>
             <h4 class="text-2xl font-bold mt-2 uppercase">QA Leader and Test Architect (Global Delivery)</h4>
-            <p class="text-zinc-400 mt-4 max-w-2xl">Implemented E2E Test Automation framework using Selenium with JAVA and TestNG librariers single handedly that was highly appreciated by the VW client and the sole reason to extend the Automation project till date.Onboarded and recruited different off shore colleagues that were impossible to hire within the limited time frame. Increased Revenue in the project due to Automation extension for straight 7 quarters and doing technical POC's for sub projects like Porsche and othe sub brands within VW. </p>
+            <p class="text-zinc-500 mt-4 max-w-2xl leading-relaxed">Implemented E2E Test Automation framework using Selenium/Java single-handedly, extending the project for 7 quarters. Scaled technical POCs for Porsche and other sub-brands.</p>
         </div>
-
-        <div class="mission-card">
-            <h3 class="text-zinc-500 text-sm uppercase tracking-widest">KOMBIT, TEST AS A SERVICE , DENMARK | 2025 - till date</h3>
+        <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-blue-500 font-mono text-xs uppercase tracking-widest">KOMBIT | Denmark | 2025 - Present</h3>
             <h4 class="text-2xl font-bold mt-2 uppercase">QA Leader and Test Architect (Global Delivery)</h4>
-            <p class="text-zinc-400 mt-4 max-w-2xl">Client had lost confidence in Cognizant as the previous Test Architect was unable to deliver one of the Tool strategy document. I delivered that document in just a week with no project background, no context and was approved by the client in one draft. It was highly appreciated by the Head of Testing and the whole QMO/Delivery Team. Client regained its trust with me coming in even before my joining.</p>
+            <p class="text-zinc-500 mt-4 max-w-2xl leading-relaxed">Recovered a critical Tool Strategy document in one week with no prior project context, restoring 100% client confidence with a first-draft approval.</p>
         </div>
     </section>
 
-    <section id="initiatives" class="section-padding bg-zinc-900">
-        <h2 class="text-3xl font-bold uppercase tracking-widest mb-12 text-center">Organisational Impact</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="p-8 border border-zinc-700 hover:border-white transition">
-                <h4 class="text-xl font-bold mb-4 uppercase">Project Deployments</h4>
-                <p class="text-zinc-400">Architected multiple high level projects that required immediate attention and precision starting from zero base , establishing full stack QA frameworks where none existed and delivered excellence everytime with appreciations from the client and within the organisation.Optimised client workflows through creation of strategy documents resulting in 100% adherence to SLA's.</p>
+    <section id="initiatives" class="section-padding bg-zinc-950/50">
+        <h2 class="text-3xl font-black uppercase tracking-[0.3em] mb-16 text-center" data-aos="fade-up">Organizational Impact</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-8 border border-zinc-800 bg-black hover:border-blue-500 transition-all group" data-aos="fade-up">
+                <h4 class="text-lg font-bold mb-4 uppercase text-blue-400">Project Deployments</h4>
+                <p class="text-zinc-500 text-sm">Architected multiple high-level projects from zero-base, establishing full-stack QA frameworks and ensuring 100% SLA adherence.</p>
             </div>
-            <div class="p-8 border border-zinc-700 hover:border-white transition">
-                <h4 class="text-xl font-bold mb-4 uppercase">Leadership and External Consultant</h4>
-                <p class="text-zinc-400">Served as a Technical Consultant and helped othe external vertical teams navigatig through different challenges within Cognizant solving their technical obstacles and accelerating their delivery speed.</p>
-                </div>
-            <div class="p-8 border border-zinc-700 hover:border-white transition">
-                <h4 class="text-xl font-bold mb-4 uppercase">COGNIZANT LATVIA AMBASSADOR</h4>
-                <p class="text-zinc-400">Represented Cognizant Latvia by visiting Universities and fairs as Cognizant's ambassador to spread Cognizant's work culture and to scout talent for Latvian Center's greem house internship program for continous 3 years.</p>
+            <div class="p-8 border border-zinc-800 bg-black hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="100">
+                <h4 class="text-lg font-bold mb-4 uppercase text-blue-400">Leadership & Consulting</h4>
+                <p class="text-zinc-500 text-sm">Technical Consultant for external vertical teams, solving complex architectural obstacles and accelerating delivery speed.</p>
             </div>
-            <div class="p-8 border border-zinc-700 hover:border-white transition">
-                <h4 class="text-xl font-bold mb-4 uppercase">PARTNERING WITH LATVIA HR</h4>
-                <p class="text-zinc-400">Liased and helped with Cognizant HR on Relocation protocols ensuring seamless global mobility from other geographies.</p>
+            <div class="p-8 border border-zinc-800 bg-black hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="text-lg font-bold mb-4 uppercase text-blue-400">Latvia Ambassador</h4>
+                <p class="text-zinc-500 text-sm">Represented Cognizant at University fairs for 3 consecutive years, scouting talent for the Greenhouse internship program.</p>
             </div>
-        <div class="p-8 border border-zinc-700 hover:border-white transition">
-                <h4 class="text-xl font-bold mb-4 uppercase">RFP and POC</h4>
-                <p class="text-zinc-400">Participated in various RFPs and Technical POC's within and outside the project to help teams in nvaigating through the initial phase.Contributed on a technical and a business level.</p>
+            <div class="p-8 border border-zinc-800 bg-black hover:border-blue-500 transition-all group" data-aos="fade-up">
+                <h4 class="text-lg font-bold mb-4 uppercase text-blue-400">HR Partnering</h4>
+                <p class="text-zinc-500 text-sm">Collaborated with HR on relocation protocols to ensure seamless global mobility for personnel across geographies.</p>
             </div>
-            <div class="p-8 border border-zinc-700 hover:border-white transition">
-                <h4 class="text-xl font-bold mb-4 uppercase">MENTORSHIP</h4>
-                <p class="text-zinc-400">Provided Mentorship to Cognizant colleagues and peers throughout the years within the Baltics and Asian region in different programs like Automation, Agile/Scrum scaling the internal capabilities of Riga center.</p>
+            <div class="p-8 border border-zinc-800 bg-black hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="100">
+                <h4 class="text-lg font-bold mb-4 uppercase text-blue-400">RFP and POC Strategy</h4>
+                <p class="text-zinc-500 text-sm">Contributed business and technical logic to multiple RFPs and POCs, navigating critical initial project phases.</p>
+            </div>
+            <div class="p-8 border border-zinc-800 bg-black hover:border-blue-500 transition-all group" data-aos="fade-up" data-aos-delay="200">
+                <h4 class="text-lg font-bold mb-4 uppercase text-blue-400">Mentorship</h4>
+                <p class="text-zinc-500 text-sm">Scaled internal capabilities in the Baltics and Asia through mentoring in Automation and Agile/Scrum methodologies.</p>
             </div>
         </div>
     </section>
 
     <section id="certifications" class="section-padding bg-black">
-        <h2 class="text-3xl font-bold uppercase tracking-widest mb-12">16 External Certification since March 2023 </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-bold tracking-widest uppercase">
-            <div class="p-4 border border-zinc-800 text-center">MS Azure 900</div>
-            <div class="p-4 border border-zinc-800 text-center">Salesforce Platform Developer 1</div>
-            <div class="p-4 border border-zinc-800 text-center">Salesforce Associate</div>
-            <div class="p-4 border border-zinc-800 text-center">Salesforce Certified Administrator</div>
-            <div class="p-4 border border-zinc-800 text-center">Salesforce Agentforce Specialist</div>
-            <div class="p-4 border border-zinc-800 text-center">Katalon Practitioner Certified</div>
-            <div class="p-4 border border-zinc-800 text-center">Katalon Professional Certified</div>
-            <div class="p-4 border border-zinc-800 text-center">Katalon Expert Certified</div>
-            <div class="p-4 border border-zinc-800 text-center">Katalon AI Certified</div>
-            <div class="p-4 border border-zinc-800 text-center">Scrum AI Certified</div>
-            <div class="p-4 border border-zinc-800 text-center">Kanban Essential with AI Certified</div>
-            <div class="p-4 border border-zinc-800 text-center">Business Analysis Certified</div>
-            <div class="p-4 border border-zinc-800 text-center">Six Sigma Yellow Belt</div>
-            <div class="p-4 border border-zinc-800 text-center">PWC Power BI</div>
-            <div class="p-4 border border-zinc-800 text-center">Temenos Induction Technical</div>
-            <div class="p-4 border border-zinc-800 text-center">Temenos Induction Business</div>
+        <h2 class="text-3xl font-black uppercase tracking-[0.3em] mb-12" data-aos="fade-up">16 External Certifications [cite: 137]</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-[10px] font-mono tracking-widest uppercase">
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">MS Azure 900</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">SF Platform Dev 1</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">SF Associate</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">SF Administrator</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">SF Agentforce Spec</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Katalon Practitioner</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Katalon Professional</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Katalon Expert</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Katalon AI Cert</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Scrum AI Cert</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Kanban AI Cert</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Business Analysis</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Six Sigma Yellow Belt</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">PWC Power BI</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Temenos Technical</div>
+            <div class="p-4 border border-zinc-800 text-center hover:border-blue-500 transition" data-aos="flip-up">Temenos Business</div>
         </div>
     </section>
 
-    <section id="rewards" class="section-padding bg-zinc-900">
-        <h2 class="text-3xl font-bold uppercase tracking-widest mb-12 text-center">AWARDS FOR PROMOTING COGNIZANT LATVIA - QA and TESTING IN EUROPE</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="p-4 border border-zinc-800 text-center">KATALON CREATOR OF THE YEAR - 2023</div>
-            <div class="p-4 border border-zinc-800 text-center">KATALON CREATOR OF THE YEAR - 2025</div>
-            <div class="p-4 border border-zinc-800 text-center">WOMEN GO TECH - LITHUANIA MENTORSHIP SPOTLIGHT</div>
-            <div class="p-4 border border-zinc-800 text-center">CONTRIBUTOR - STATE OF THE ART 2023 SOFTWARE TEST REPORT</div>
-            <div class="p-4 border border-zinc-800 text-center">WOMEN GO TECH - LITHUANIA MENTORSHIP SPOTLIGHT</div>
-            <div class="p-4 border border-zinc-800 text-center">TESTING JOURNEY SPOTLIGHT BY KATALON</div>
-            <div class="p-4 border border-zinc-800 text-center">RIGA TECH GIRLS - LATVIA MENTORSHIP APPREECIATION</div>
-            <div class="p-4 border border-zinc-800 text-center">WOMEN GO TECH - LITHUANIA MENTORSHIP APPRECIATION</div>
-            <div class="p-4 border border-zinc-800 text-center">WOMEN GO TECH - LITHUANIA BRAND AMBASSADOR</div>
-            <div class="p-4 border border-zinc-800 text-center">COGNIZANT - VIBE CODING AI HACKATHON</div>
-            <div class="p-4 border border-zinc-800 text-center">COGNIZANT - 2025 - UNIVERSITY PROMOTION EVENT AWARD</div>
-            <div class="p-4 border border-zinc-800 text-center">COGNIZANT - 2023 - UNIVERSITY PROMOTION EVENT AWARD</div>
-            <div class="p-4 border border-zinc-800 text-center">KATALON - 2024 - AUTOMATION WHITE PAPER CONTRIBUTOR</div>
-            <div class="p-4 border border-zinc-800 text-center">KATALON - TOP COMMUNITY CONTRIBUTOR SINCE 3 YEARS</div>
+    <section id="rewards" class="section-padding bg-zinc-950">
+        <h2 class="text-3xl font-black uppercase tracking-[0.3em] mb-12 text-center" data-aos="fade-up">Awards & Recognition</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-[10px] font-bold tracking-widest uppercase">
+            <div class="p-4 border border-zinc-800 bg-black text-center">Katalon Creator of the Year 2023/2025 </div>
+            <div class="p-4 border border-zinc-800 bg-black text-center">Women Go Tech Lithuania Mentor Spotlight</div>
+            <div class="p-4 border border-zinc-800 bg-black text-center">Software Test Report Contributor 2023</div>
+            <div class="p-4 border border-zinc-800 bg-black text-center">Testing Journey Spotlight by Katalon</div>
+            <div class="p-4 border border-zinc-800 bg-black text-center">Riga Tech Girls Latvia Appreciation</div>
+            <div class="p-4 border border-zinc-800 bg-black text-center">Cognizant VIBE AI Hackathon Winner</div>
+            <div class="p-4 border border-zinc-800 bg-black text-center">University Promotion Event Awards (23/25)</div>
+            <div class="p-4 border border-zinc-800 bg-black text-center">Top Community Contributor (3 Years)</div>
         </div>
     </section>
 
     <section id="mentorship" class="section-padding bg-black">
-        <h2 class="text-3xl font-bold uppercase tracking-widest mb-12">MENTORSHIP , MEETUPS AND WEBINARS WITHIN AND OUTSIDE COGNIZANT </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-bold tracking-widest uppercase">
-            <div class="p-4 border border-zinc-800 text-center">AUTOMATION SESSION FOR COGNIZANT EMPLOYEES  - CTS RIGA CENTER</div>
-            <div class="p-4 border border-zinc-800 text-center">AUTOMATION MEETUP FOR COGNIZANT EMPLOYEES   - RADISSON HOTEL RIHA</div>
-            <div class="p-4 border border-zinc-800 text-center">AUTOMATION MEETUP FOR ACCENTURE EMPLOYEES AND OUTSIDE COLLEAGUES  -  ACCENTURE BALTICS CENTER</div>
-            <div class="p-4 border border-zinc-800 text-center">AUTOMATION MEETUP FOR INDIA COLLEAGUES AND OUTSIDE COLLEAGUES  -  RAPID CIRCLE , PUNE , INDIA</div>
-            <div class="p-4 border border-zinc-800 text-center">AUTOMATION MEETUP FOR WOMEN GO TECH COLLEAGUES - LITHUANIA</div>
-             <div class="p-4 border border-zinc-800 text-center">AUTOMATION MEETUP FOR RIGA TECH GIRLS COLLEAGUES - LATVIA</div>
-        
+        <h2 class="text-3xl font-black uppercase tracking-[0.3em] mb-12" data-aos="fade-up">Global Mentorship & Meetups</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-[10px] font-mono tracking-widest uppercase">
+            <div class="p-4 border border-zinc-800 text-center">CTS Riga Center - Automation Sessions</div>
+            <div class="p-4 border border-zinc-800 text-center">Radisson Hotel Riha - Automation Meetup</div>
+            <div class="p-4 border border-zinc-800 text-center">Accenture Baltics - Guest Speaker</div>
+            <div class="p-4 border border-zinc-800 text-center">Rapid Circle Pune - India Meetup</div>
+            <div class="p-4 border border-zinc-800 text-center">Women Go Tech - Lithuania Mentor</div>
+            <div class="p-4 border border-zinc-800 text-center">Riga Tech Girls - Latvia Mentor</div>
         </div>
     </section>
 
-      <section id="foundation" class="section-padding bg-zinc-900 border-t border-zinc-800">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-black uppercase tracking-[0.3em] mb-16 text-center">Technical Foundation</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="p-10 border border-zinc-800 bg-black hover:border-blue-400 transition-all flex flex-col justify-center">
-                <div class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-4">Post-Graduate MBA</div>
-                <h3 class="text-2xl font-black uppercase mb-2">MBA in Total Quality Management</h3>
-                <div class="text-zinc-500 text-sm uppercase tracking-widest font-bold mb-6 italic">Sikkim Manipal University | 2014 – 2017</div>
-                <p class="text-zinc-400 text-sm leading-relaxed">
-                    Specialized in high-level quality governance, lean methodologies, and organizational efficiency. This academic pillar drives the ability to scale QA processes across multi-million euro project verticals and European delivery centers.
-                </p>
-            </div>
-
-            <div class="p-10 border border-zinc-800 bg-black hover:border-white transition-all flex flex-col justify-center">
-                <div class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-4">Graduate Engineering</div>
-                <h3 class="text-2xl font-black uppercase mb-2">BE in Mechanical Engineering</h3>
-                <div class="text-zinc-500 text-sm uppercase tracking-widest font-bold mb-6 italic">Nagpur University | 2004 – 2008</div>
-                <p class="text-zinc-400 text-sm leading-relaxed">
-                    The fundamental engineering core that fuels an analytical approach to software architecture. Trained in structural logic and system physics, now applied to orchestrating complex software delivery pipelines and mission-critical automation.
-                </p>
+    <section id="foundation" class="section-padding bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-black uppercase tracking-[0.3em] mb-16 text-center" data-aos="fade-up">Technical Foundation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="p-10 border border-zinc-900 bg-black" data-aos="fade-right">
+                    <h3 class="text-2xl font-black uppercase mb-4">MBA - Total Quality Management</h3>
+                    <p class="text-blue-500 font-mono text-xs mb-6">Sikkim Manipal University | 2014 – 2017 [cite: 135]</p>
+                    <p class="text-zinc-500 text-sm">Specialized in quality governance and lean methodologies to scale multi-million euro project verticals.</p>
+                </div>
+                <div class="p-10 border border-zinc-900 bg-black" data-aos="fade-left">
+                    <h3 class="text-2xl font-black uppercase mb-4">BE - Mechanical Engineering</h3>
+                    <p class="text-blue-500 font-mono text-xs mb-6">Nagpur University | 2004 – 2008 [cite: 133]</p>
+                    <p class="text-zinc-500 text-sm">Fundamental core fueling an analytical approach to complex software architecture and pipelines.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
- 
+    </section>
+
     <section id="awards" class="section-padding bg-white text-black">
-        <h2 class="text-3xl font-black uppercase tracking-widest mb-12">Mission Recognition</h2>
-        <div class="space-y-12">
-            <blockquote>
-                <p class="text-2xl italic font-light">"Feedback on Monty – Test Architect
-Monty has made an exceptional impact in a remarkably short time. Despite having limited time to familiarize himself with KOMBIT’s environment, processes, and systems, he has quickly adapted and is already delivering results that exceed expectations. His ability to assimilate complex information and navigate intricate problem areas demonstrates a high level of analytical capability and professional maturity.
- 
-Monty approaches challenges with composure and clarity, ensuring that solutions are both practical and sustainable. He consistently provides valuable support to colleagues, fosters collaboration, and takes ownership of tasks with a proactive mindset. His independence and structured approach reflect the qualities of a seasoned Senior Consultant who brings both depth of experience and reliability to the team.
- 
-Example of Monty’s contribution:
-Within a very short timeframe, Monty took full ownership of the Test Tool Strategy, which had previously been delivered unsuccessfully. He analyzed the situation, defined a clear and actionable approach, and delivered the first version of the strategy to the client’s satisfaction. This turnaround not only restored confidence but also set a solid foundation for future testing activities. His ability to recover a critical deliverable and meet stakeholder expectations highlights his professionalism and problem-solving skills.
- 
-Beyond his technical and professional strengths, Monty stands out for his interpersonal skills. He maintains a consistently positive attitude, communicates effectively, and creates a constructive and pleasant working atmosphere. His approachable nature and willingness to assist others make him not only a trusted expert but also a highly valued team member.
- 
-In summary, Monty combines strong technical expertise, strategic thinking, and exceptional collaboration skills. His rapid integration and ability to deliver at such a high level underscore his professionalism and the significant value he brings to the organization.
-."</p>
-                <cite class="block mt-4 uppercase font-bold tracking-widest">— KOMBIT SERVICE DELIVERY MANAGER</cite>
+        <h2 class="text-3xl font-black uppercase tracking-widest mb-16" data-aos="fade-up">Mission Recognition</h2>
+        <div class="space-y-16">
+            <blockquote class="border-l-4 border-black pl-8" data-aos="fade-up">
+                <p class="text-xl italic font-light leading-relaxed">"Monty took full ownership of the Test Tool Strategy, defining an actionable approach that restored client confidence. His rapid integration and ability to deliver underscore his professionalism."</p>
+                <cite class="block mt-6 uppercase font-bold tracking-[0.2em]">— KOMBIT Service Delivery Manager</cite>
             </blockquote>
-            <hr class="border-zinc-200">
-            <blockquote>
-                <p class="text-2xl italic font-light">"As the responsible Service Delivery Manager and Monty’s home manager, I am proud to highlight his outstanding performance and significant contributions over the past 18 months. Monty has consistently demonstrated exceptional technical expertise, leadership, and initiative, creating a lasting impact on both our project and the client. One of Monty’s most notable achievements was designing and implementing a new automation framework for Volkswagen, covering six applications. He built a scalable automation architecture within an extremely short timeframe - a remarkable accomplishment formally recognized by the client. This success was instrumental in the client’s decision to continue the automation initiative despite internal resistance. Monty managed this effort independently, overcoming complex infrastructure challenges and showcasing remarkable self-sufficiency and technical depth. Beyond this major success, Monty co-led the newly created Load and Performance (LuP) testing project, drove successful delivery, and played a critical role in sourcing and managing resources across multiple teams. He completed three external certifications (two in AI and test automation, one in Salesforce Agentforce) while seamlessly transitioning to a new project in KOMBIT. Monty also delivered several technical Proof of Concepts that supported client engagement expansion and opened new revenue opportunities for Cognizant. Additionally, Monty actively mentored and coached team members, facilitated onboarding, and led knowledge-sharing sessions, strengthening collaboration and overall team capability. His ability to combine technical depth with leadership and client influence makes him an invaluable asset to our organization. I already know I will miss his unique way of working and the positive influence he brings to the team.."</p>
-                <cite class="block mt-4 uppercase font-bold tracking-widest">— VOLKSWAGEN SERVICE DELIVERY MANAGER</cite>
+            <blockquote class="border-l-4 border-black pl-8" data-aos="fade-up">
+                <p class="text-xl italic font-light leading-relaxed">"Monty built a scalable automation architecture for Volkswagen within an extremely short timeframe—a remarkable accomplishment instrumental in continuing the initiative despite resistance."</p>
+                <cite class="block mt-6 uppercase font-bold tracking-[0.2em]">— Volkswagen Service Delivery Manager</cite>
             </blockquote>
         </div>
     </section>
 
     <footer class="py-20 text-center bg-black border-t border-zinc-900">
-    <div class="opacity-40 text-xs uppercase tracking-[0.5em] mb-4">Contact Mission Control</div>
-    
-    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-xl font-bold mb-8 uppercase tracking-widest">
-        <a href="mailto:monty.bagati@cognizant.com" class="hover:text-blue-400 transition">monty.bagati@cognizant.com</a>
-        <span class="hidden md:block opacity-20">|</span>
-        <a href="tel:+37125657827" class="hover:text-blue-400 transition">+371 25657827</a>
-    </div>
+        <div class="opacity-30 text-[10px] uppercase tracking-[0.8em] mb-8 font-mono">End of Transmission // Riga_Center</div>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-xl font-bold mb-12 uppercase tracking-widest">
+            <a href="mailto:monty.bagati@cognizant.com" class="hover:text-blue-500 transition">monty.bagati@cognizant.com</a>
+            <span class="hidden md:block opacity-20">|</span>
+            <a href="tel:+37125657827" class="hover:text-blue-500 transition">+371 25657827</a>
+        </div>
+        <div class="flex justify-center space-x-12 opacity-50 text-[10px] uppercase font-bold tracking-widest">
+            <a href="https://www.linkedin.com/in/monty-bagati-90454626/" target="_blank" class="hover:text-white transition">LinkedIn</a>
+            <span>Riga, Latvia [cite: 2]</span>
+        </div>
+    </footer>
 
-    <div class="flex justify-center space-x-6 opacity-60 text-xs uppercase font-bold tracking-widest">
-        <a href="https://www.linkedin.com/in/monty-bagati-90454626/" target="_blank" class="hover:text-white transition">LinkedIn</a>
-        <span class="text-zinc-700">•</span>
-        <span>Riga, Latvia</span>
-    </div>
-</footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+        };
+        const text = "Career Growth & Global Delivery";
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        window.onload = type;
+    </script>
 </body>
 </html>
