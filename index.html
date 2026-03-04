@@ -39,39 +39,40 @@
 
         /* Startup Launch Animation */
 @keyframes rocket-blast-off {
-    0% { transform: translate(-50%, 100vh) scale(0.6); opacity: 0; }
+    0% { transform: translate(-50%, 100vh) scale(1.5); opacity: 0; }
     15% { opacity: 1; }
     85% { opacity: 1; }
-    100% { transform: translate(-50%, -120vh) scale(1.5); opacity: 0; }
+    100% { transform: translate(-50%, -150vh) scale(3); opacity: 0; }
 }
 
 .opening-rocket {
     position: fixed;
     left: 50%;
-    bottom: -100px;
-    z-index: 9999; /* Keeps it above everything else */
-    pointer-events: none; /* Stops it from blocking clicks */
+    bottom: -200px; /* Lower start point for the bigger size */
+    z-index: 9999;
+    pointer-events: none;
     animation: rocket-blast-off 3.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .rocket-aura {
-    filter: drop-shadow(0 0 20px rgba(255, 100, 0, 0.8));
+    filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.8)) drop-shadow(0 0 60px rgba(255, 100, 0, 0.4));
 }
 /* End Launch Animation */
     </style>
 </head>
 <body>
 
-
-<<div class="opening-rocket">
-    <svg class="rocket-aura" width="60" height="100" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C12 2 9 6 9 12C9 15.5 10.5 18 12 18C13.5 18 15 15.5 15 12C15 6 12 2 12 2Z" fill="white"/>
-        <path d="M9 14L5 19H9V14Z" fill="#60a5fa"/>
-        <path d="M15 14L19 19H15V14Z" fill="#60a5fa"/>
-        <circle cx="12" cy="9" r="1.5" fill="#000"/>
-        <path d="M11 18L12 22L13 18H11Z" fill="#ff6400">
-            <animate attributeName="opacity" values="1;0.5;1" dur="0.1s" repeatCount="indefinite" />
+<div class="opening-rocket">
+    <svg class="rocket-aura" width="120" height="180" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 22C12 22 10 18 10 16H14C14 18 12 22 12 22Z" fill="#ff6400">
+             <animate attributeName="opacity" values="1;0.4;1" dur="0.05s" repeatCount="indefinite" />
         </path>
+        <path d="M12 2C12 2 7 6 7 13C7 15 8.5 17 12 17C15.5 17 17 15 17 13C17 6 12 2 12 2Z" fill="white"/>
+        <path d="M7 11C7 11 5 12 5 15C5 17 6 18 7 18V11Z" fill="#CBD5E1"/>
+        <path d="M17 11C17 11 19 12 19 15C19 17 18 18 17 18V11Z" fill="#CBD5E1"/>
+        <path d="M7 14L3 18V20H7V14Z" fill="#3b82f6"/>
+        <path d="M17 14L21 18V20H17V14Z" fill="#3b82f6"/>
+        <circle cx="12" cy="8" r="1.2" fill="#1e293b"/>
     </svg>
 </div>
 
