@@ -274,15 +274,33 @@ In summary, Monty combines strong technical expertise, strategic thinking, and e
         </div>
     </footer>
 
+     <button id="backToTop" class="fixed bottom-8 right-8 z-[100] bg-blue-600 hover:bg-blue-500 text-white p-3 rounded-full shadow-lg transition-all duration-300 translate-y-20 opacity-0">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+</button>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         const backToTopBtn = document.getElementById("backToTop");
         AOS.init({ duration: 1000, once: true });
+
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             let scrolled = (winScroll / height) * 100;
+            
+            // Progress Bar
             document.getElementById("scroll-progress").style.width = scrolled + "%";
+
+            // Button Visibility
+            if (winScroll > 400) {
+                backToTopBtn.style.opacity = "1";
+                backToTopBtn.style.transform = "translateY(0)";
+            } else {
+                backToTopBtn.style.opacity = "0";
+                backToTopBtn.style.transform = "translateY(80px)";
+            }
         };
         const text = "Career Growth & Global Delivery";
         let i = 0;
@@ -297,18 +315,7 @@ In summary, Monty combines strong technical expertise, strategic thinking, and e
         // Handle the Click
 backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-// Handle Button Visibility
-// Function to show/hide button on scroll
-window.addEventListener('scroll', function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    if (currentScroll > 400) {
-        backToTopBtn.style.opacity = "1";
-        backToTopBtn.style.transform = "translateY(0)";
-    } else {
-        backToTopBtn.style.opacity = "0";
-        backToTopBtn.style.transform = "translateY(80px)";
-    }
-});
+
 
 // Function to scroll to top on click
 backToTopBtn.addEventListener('click', function() {
@@ -316,11 +323,7 @@ backToTopBtn.addEventListener('click', function() {
 });
     </script>
     
-    <button id="backToTop" class="fixed bottom-8 right-8 z-[100] bg-blue-600 hover:bg-blue-500 text-white p-3 rounded-full shadow-lg transition-all duration-300 translate-y-20 opacity-0">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-    </svg>
-</button>
+   
 
 </body>
 </html>
