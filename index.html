@@ -55,7 +55,7 @@
 }
 
 .rocket-aura {
-    filter: drop-shadow(0 0 15px rgba(96, 165, 250, 0.9));
+    filter: drop-shadow(0 0 20px rgba(255, 100, 0, 0.8));
 }
 /* End Launch Animation */
     </style>
@@ -63,9 +63,15 @@
 <body>
 
 
-<div class="opening-rocket">
-    <svg class="rocket-aura" width="80" height="80" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12,2L4.5,20.29L5.21,21L12,18L18.79,21L19.5,20.29L12,2Z" />
+<<div class="opening-rocket">
+    <svg class="rocket-aura" width="60" height="100" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C12 2 9 6 9 12C9 15.5 10.5 18 12 18C13.5 18 15 15.5 15 12C15 6 12 2 12 2Z" fill="white"/>
+        <path d="M9 14L5 19H9V14Z" fill="#60a5fa"/>
+        <path d="M15 14L19 19H15V14Z" fill="#60a5fa"/>
+        <circle cx="12" cy="9" r="1.5" fill="#000"/>
+        <path d="M11 18L12 22L13 18H11Z" fill="#ff6400">
+            <animate attributeName="opacity" values="1;0.5;1" dur="0.1s" repeatCount="indefinite" />
+        </path>
     </svg>
 </div>
 
