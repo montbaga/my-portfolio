@@ -298,15 +298,21 @@ In summary, Monty combines strong technical expertise, strategic thinking, and e
 backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 // Handle Button Visibility
+// Function to show/hide button on scroll
 window.addEventListener('scroll', function() {
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    if (winScroll > 400) {
-        backToTopBtn.classList.remove("translate-y-20", "opacity-0");
-        backToTopBtn.classList.add("translate-y-0", "opacity-100");
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScroll > 400) {
+        backToTopBtn.style.opacity = "1";
+        backToTopBtn.style.transform = "translateY(0)";
     } else {
-        backToTopBtn.classList.add("translate-y-20", "opacity-0");
-        backToTopBtn.classList.remove("translate-y-0", "opacity-100");
+        backToTopBtn.style.opacity = "0";
+        backToTopBtn.style.transform = "translateY(80px)";
     }
+});
+
+// Function to scroll to top on click
+backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
     </script>
     
