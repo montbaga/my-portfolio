@@ -276,6 +276,7 @@ In summary, Monty combines strong technical expertise, strategic thinking, and e
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        const backToTopBtn = document.getElementById("backToTop");
         AOS.init({ duration: 1000, once: true });
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -293,6 +294,20 @@ In summary, Monty combines strong technical expertise, strategic thinking, and e
             }
         }
         window.onload = type;
+        // Handle the Click
+backToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+// Handle Button Visibility
+window.addEventListener('scroll', function() {
+    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    if (winScroll > 400) {
+        backToTopBtn.classList.remove("translate-y-20", "opacity-0");
+        backToTopBtn.classList.add("translate-y-0", "opacity-100");
+    } else {
+        backToTopBtn.classList.add("translate-y-20", "opacity-0");
+        backToTopBtn.classList.remove("translate-y-0", "opacity-100");
+    }
+});
     </script>
 </body>
 </html>
