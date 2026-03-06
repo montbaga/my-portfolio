@@ -7,7 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+   
+@keyframes blink {
+    0%, 100% { opacity: 1; text-shadow: 0 0 10px #3b82f6; }
+    50% { opacity: 0.3; text-shadow: none; }
+}
+.blink-text { animation: blink 2s infinite; }
+
+.status-sync-box {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #60a5fa;
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 3px solid #3b82f6;
+    padding: 10px 20px;
+    display: inline-block;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
     <style>
         body { 
             font-family: 'Roboto', sans-serif; 
@@ -108,6 +126,10 @@
 
     <section class="hero-bg flex flex-col justify-center pt-24 px-10 md:px-24">
         <div data-aos="fade-right">
+            <div class="status-sync-box" data-aos="fade-down" data-aos-delay="500">
+    <span class="animate-pulse mr-2">●</span> 
+    Mission Data Sync: 30th March 2023 – Present
+</div>
             <h2 class="text-xl uppercase tracking-[0.5em] mb-4 text-blue-400 font-mono">Engineering Test Manager</h2>
             <h1 class="text-6xl md:text-8xl font-black uppercase leading-none mb-8">
                 Advancing <br>
