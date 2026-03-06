@@ -39,6 +39,24 @@
         .mission-card:hover { border-left: 1px solid #60a5fa; background: rgba(255,255,255,0.02); }
 
         /* Startup Launch Animation */
+/* This makes the data note blink and look like a high-priority system alert */
+@keyframes alert-blink {
+    0%, 100% { opacity: 1; text-shadow: 0 0 12px #3b82f6; }
+    50% { opacity: 0.3; }
+}
+
+.data-alert-bold {
+    animation: alert-blink 1.5s infinite;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 900; /* Extra Bold */
+    color: #60a5fa;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 8px; /* Space between this and the title */
+}
+
 @keyframes rocket-blast-off {
     0% { transform: translate(-50%, 100vh) scale(1.5); opacity: 0; }
     15% { opacity: 1; }
@@ -109,7 +127,9 @@
 
     <section class="hero-bg flex flex-col justify-center pt-24 px-10 md:px-24">
         <div data-aos="fade-right">
-            
+             <span class="data-alert-bold">
+    [!] SYSTEM DATA SYNC: 30th MARCH 2023 – PRESENT
+</span>
             <h2 class="text-xl uppercase tracking-[0.5em] mb-4 text-blue-400 font-mono">Engineering Test Manager</h2>
             <h1 class="text-6xl md:text-8xl font-black uppercase leading-none mb-8">
                 Advancing <br>
