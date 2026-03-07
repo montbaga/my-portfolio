@@ -87,11 +87,21 @@
 /* End Launch Animation */
 
 /* Inside your <style> tag */
-@keyframes blink {
-    0%, 100% { opacity: 1; text-shadow: 0 0 10px #3b82f6; }
-    50% { opacity: 0.4; text-shadow: none; }
+/* Ultra-Bold Electric Blue Footer Style */
+.riga-ultra-bold {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 900 !important; /* Maximum thickness */
+    color: #00f2ff !important;   /* Electric Cyan-Blue */
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px #0044ff; /* Stronger glow */
+    animation: riga-pulse 2s infinite;
 }
-.blink-text { animation: blink 2s infinite; }
+
+@keyframes riga-pulse {
+    0%, 100% { opacity: 1; filter: brightness(1.2); }
+    50% { opacity: 0.7; filter: brightness(0.8); }
+}
     </style>
 </head>
 <body>
@@ -303,10 +313,12 @@ In summary, Monty combines strong technical expertise, strategic thinking, and e
 
     <footer class="py-32 text-center relative overflow-hidden bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center border-t border-zinc-800">
     <div class="mb-10 text-center">
+    <div class="mb-10 text-center">
     <a href="https://www.cognizant.com/lv/en" target="_blank" 
-       class="blink-text text-blue-400 text-sm font-black uppercase tracking-[0.5em] cursor-pointer transition-all">
+       class="riga-ultra-bold text-lg cursor-pointer transition-all hover:tracking-[0.6em]">
         RIGA MISSION CENTER - COGNIZANT
     </a>
+</div>
 </div>
         <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-xl font-bold mb-12 uppercase tracking-widest">
             <a href="mailto:monty.bagati@cognizant.com" class="hover:text-blue-500 transition">monty.bagati@cognizant.com</a>
